@@ -2,6 +2,8 @@
 
 var connection = require("../config/connection.js");
 
+
+//helper syntax
 function printQuestionMarks(num) {
     var arr = [];
   
@@ -35,8 +37,14 @@ function printQuestionMarks(num) {
     return arr.toString();
   }
   
-  // Object for all our SQL statement functions.
-  var orm = {
+  
+
+//Looks like we only need to do a create and update function, as burgers arent going
+//to be deleted when devoured just the boolean changed from false to true, 
+//and placing them in a seperate table on our webpage
+//but you can only delete burgers you've eaten
+
+var orm = {
     all: function(tableInput, cb) {
       var queryString = "SELECT * FROM " + tableInput + ";";
       connection.query(queryString, function(err, result) {
@@ -84,19 +92,19 @@ function printQuestionMarks(num) {
         cb(result);
       });
     },
-    delete: function(table, condition, cb) {
-      var queryString = "DELETE FROM " + table;
-      queryString += " WHERE ";
-      queryString += condition;
+    // delete: function(table, condition, cb) {
+    //   var queryString = "DELETE FROM " + table;
+    //   queryString += " WHERE ";
+    //   queryString += condition;
   
-      connection.query(queryString, function(err, result) {
-        if (err) {
-          throw err;
-        }
+    //   connection.query(queryString, function(err, result) {
+    //     if (err) {
+    //       throw err;
+    //     }
   
-        cb(result);
-      });
-    }
+    //     cb(result);
+    //   });
+    // }
   };
   
   // Export the orm object for the model (cat.js).
