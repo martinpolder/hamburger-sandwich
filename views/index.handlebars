@@ -1,12 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+
+
+<h2>Fresh Burgers for devouring</h2>
+<ul>
+    {{#each burgers}}
+        {{#unless devoured}}
+         {{> burgers/burger-block devoured=true}}
+        {{/unless}}
+    {{/each}}
+</ul>
+
+
+
+<h2>Devoured Burgers</h2>
+<ul>
+    {{#each burgers}}
+        {{#if devoured}}
+            {{> burgers/burger-block devoured=false}}
+        {{/if}}
+    {{/each}}
+</ul>
     
+
+<h2>Add a burger!</h2>
+<form class="create-form">
+
+   <div class="form-group">
+       <label for="bu">Burger:</label>
+       <input type="text" id="ca" name="name">
+   </div> 
+
+<div class="form-group">
+    <label for="devoured">Devoured?</label><br>
+    <input type="radio" name="devoured" value="1" checked> Devoured<br>
+    <input type="radio" name="devoured" value="0" checked> Uneaten
+  </div>
+
+
+<button type="submit">Add Burger</button>
+
+</form>
+
+
+
+
+
 </body>
 </html>
