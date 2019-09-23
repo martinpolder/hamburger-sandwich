@@ -1,5 +1,11 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
+
+  $('.carousel').carousel({
+    interval: 9000
+  })
+
+
   $(".change-devoured").on("click", function(event) {
     var id = $(this).data("id");
     var newDevoured = $(this).data("newdevoured");
