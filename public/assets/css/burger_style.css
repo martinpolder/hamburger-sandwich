@@ -1,22 +1,29 @@
 
 
-body { background-image: url("https://i.imgur.com/KCewFco.png");    
+body { background-image: url("https://i.imgur.com/60qEOLx.png");    
     background-repeat: repeat;
 }
 
 
 .navbar {
-    background-color: rgba(255, 0, 0, 0.061);
+    background-color: rgba(255, 255, 255, 0.877);
 }
 .menu {
-    background-color: rgba(27, 27, 27, 0.822);
-    color: rgb(255, 254, 191);
-    
+    background-color: rgba(255, 255, 255, 0.938);
+    font-family: 'Special Elite', cursive;
+    color: rgb(48, 12, 12);
+    padding-top: 3%;
+    border-radius: 10px;
+    margin-bottom: 10%;
+    padding-bottom: 5%;
 }
 
-h1 {
+#header {
     margin: auto;
     font-family: 'Shrikhand', cursive;
+    color: red;
+    font-size: 300%;
+    text-shadow: 10px, 10px, 15px, black;
    
 }
 
@@ -25,4 +32,22 @@ h1 {
     margin: auto;
     margin-top: 10%;
     margin-bottom: 5%;
+   
+}
+
+.order {
+    text-align: center;
+    margin-bottom: 5%;
+   
+}
+
+.fresh {
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.devoured {
+    text-align: right;
+    margin-right: 5%;
+    margin-top: 5%;
 }

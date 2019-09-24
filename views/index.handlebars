@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top">
-  <h1>Custom Hamburger Sandwich Co. Ltd.</h1>
+  <p id="header">Custom Hamburger Sandwich Co. Ltd.</p>
 </nav>
 
 
@@ -12,15 +12,28 @@
       <div class="carousel-item active" data-interval="4000">
         <img
           src="https://d9hyo6bif16lx.cloudfront.net/live/img/production/detail/menu/lunch-dinner_burgers_all-american-burger.jpg"
-          class="d-block w-100" alt="...">
+          class="d-block w-100" alt="classic hamburger">
       </div>
-      <div class="carousel-item"  data-interval="4000">
+      <div class="carousel-item" data-interval="4000">
         <img
           src="https://d9hyo6bif16lx.cloudfront.net/live/img/production/detail/menu/lunch-dinner_burgers_cheesy-mushroom-mania-burger.jpg"
-          class="d-block w-100" alt="...">
+          class="d-block w-100" alt="cheesy mushroom burger">
       </div>
-      <div class="carousel-item"  data-interval="4000">
-        <img src="https://i.ytimg.com/vi/AJAkMojjOWg/maxresdefault.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-item" data-interval="4000">
+        <img
+          src="https://d9hyo6bif16lx.cloudfront.net/live/img/production/detail/menu/lunch-dinner_burgers_parmesan-sourdough-cheeseburger.jpg"
+          class="d-block w-100" alt="parmasan sourdough patty melt">
+      </div>
+      <div class="carousel-item" data-interval="4000">
+        <img
+          src="https://d9hyo6bif16lx.cloudfront.net/live/img/production/detail/menu/lunch-dinner_burgers_double-honey-bbq-burger.jpg"
+          class="d-block w-100" alt="double honey bbq burger">
+      </div>
+
+       <div class="carousel-item" data-interval="4000">
+        <img
+          src="https://d9hyo6bif16lx.cloudfront.net/live/img/production/detail/menu/lunch-dinner_burgers_veggie-burger.jpg"
+          class="d-block w-100" alt="veggie burger">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -38,21 +51,9 @@
 <div class="container">
 
   <div class="menu">
-    <div class="row">
-      <div class="col-lg-4">
 
-        <h2>Burgers that are ready to be devoured!</h2>
-
-        <ul>
-          {{#each burgers}}
-          {{#unless devoured}}
-          {{> burgers/burger-block devoured=true}}
-          {{/unless}}
-          {{/each}}
-        </ul>
-      </div>
-
-      <div class="col-lg-4">
+    <div class="row order">
+      <div class="col-lg">
         <h2>Order a Burger</h2>
         <form class="create-form">
 
@@ -67,12 +68,34 @@
             <input type="radio" name="devoured" value="0" Checked> Ready to eat
           </div>
 
-          <button type="submit">Add Burger</button>
+          <button type="submit" class="btn btn-outline-success btn-lg">Add Burger</button>
         </form>
       </div>
+    </div>
 
 
-      <div class="col-lg-4">
+
+    <div class="row fresh">
+      <div class="col-lg">
+
+        <h2>Burgers that are ready to be devoured!</h2>
+
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burgers/burger-block devoured=true}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="row devoured">
+      <div class="col-lg">
         <h2>Burgers that have been devoured!</h2>
 
         <ul>
@@ -85,4 +108,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
